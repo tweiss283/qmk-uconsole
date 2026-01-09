@@ -127,10 +127,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         is_locked = !is_locked;
       }
       return false;
-    case MO(LY1):
-      // Fn key toggles scroll mode (trackball scrolling)
+    case JS_4:
+      // Select key toggles scroll mode (trackball scrolling)
       select_button_pressed = record->event.pressed;
-      return true;  // Allow normal layer switching to continue
+      return true;
     case JS_LEFT:
       joystick_set_axis(1, record->event.pressed ? -127 : 0);
       return false;

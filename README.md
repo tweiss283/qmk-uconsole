@@ -26,6 +26,12 @@ This web-based tool provides:
 
 Perfect for verifying your firmware installation and familiarizing yourself with the uConsole's unique keyboard layout!
 
+## 🎹 Special Key Behaviors
+
+* **Trackball Scrolling:** Hold the **Select** key and move the trackball to scroll.
+    * Move Up/Down for Vertical Scroll
+    * Move Left/Right for Horizontal Scroll
+* **DFU (Bootloader) Mode:** Press `Left Alt` + `Right Alt` + `Start` simultaneously to enter DFU mode.
 
 ## 🎯 Installation Guide
 
