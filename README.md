@@ -109,7 +109,7 @@ Don't panic if your keyboard becomes unresponsive! Follow these steps to restore
    sudo ./flash
    ```
    
-   **Note:** You may need to try this several times. Keep the S1 pin shorted while running the command.
+   **Note:** You may need to try this several or many times.
 
 4. **Verify:** Once successful, your keyboard should be responsive again. You can then re-flash QMK if needed.
 
