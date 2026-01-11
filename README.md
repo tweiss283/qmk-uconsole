@@ -72,7 +72,6 @@ If you're upgrading from the original ClockworkPi firmware:
    ```bash
    sudo ./maple_upload ttyACM0 2 1EAF:0003 clockworkpi_uconsole_default.bin
    ```
-
 ---
 
 ### Option 2: Upgrade from Existing QMK Firmware
@@ -94,7 +93,9 @@ If you already have QMK installed and want to update:
 
 ### 🆘 Recovery: Unbricking Your Keyboard
 
-Don't panic if your keyboard becomes unresponsive! Follow these steps to restore it:
+In some rare cases, the keyboard did enter into the DFU mode, however, the firmware did not flash (keep showing waiting or ctrl+c to cancel) and keyboad is not responsive, try to reboot the OS then flash again.
+
+If this is bricked after reboot, Don't panic if your keyboard becomes unresponsive! Follow these steps to restore it:
 
 1. **Connect the micro-USB cable** from your uConsole to the keyboard
 
