@@ -89,6 +89,8 @@ If you already have QMK installed and want to update:
    
    **`Left Alt` + `Right Alt` + `Start`**
 
+   After installing the QMK firmware, bootload has 2-3 seconds window open for uploading firmware. Otherwise it will verify the existing firmware and functional as normal.
+
 ---
 
 ### 🆘 Recovery: Unbricking Your Keyboard
@@ -113,6 +115,16 @@ If this is bricked after reboot, Don't panic if your keyboard becomes unresponsi
    **Note:** You may need to try this several or many times.
 
 4. **Verify:** Once successful, your keyboard should be responsive again. You can then re-flash QMK if needed.
+
+## Other Resources
+
+### Improving Fit and Reducing Noise
+If the trackball does not sit flush beneath the **uConsole** cover or exhibits slight mechanical "play," you can install a custom shim to tighten the fit. This modification eliminates internal gaps and significantly dampens the vibration noise generated when rolling the trackball against the metal chassis.
+* **Download:** **[Trackball Shim STL](https://github.com/j1n6/qmk-uconsole/blob/main/images/TPU_Trackball_Shim.stl)**
+
+* **Material Recommendation:** I highly recommend printing this part using **TPU** or another flexible filament. The elasticity of TPU provides the necessary grip to hold the module in place while acting as a shock absorber for a quieter user experience.
+
+![Shim Install Location](https://github.com/j1n6/qmk-uconsole/blob/main/images/3d-printed-tpu-shim.jpeg?raw=true)
 
 ## ☕ Support My Work
 If you like my work, please consider [Buy me a Coffee](https://www.paypal.com/donate?token=0VRjowcZ_vZADGjy8UpFzoxQ9fgRgK27nz7Aw80MCTsNo8EzsxBGzcvTxYOGbU9r9nCraSPyB9LN4_Nn). Thank you.
