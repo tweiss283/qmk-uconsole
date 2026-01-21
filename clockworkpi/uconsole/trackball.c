@@ -19,6 +19,7 @@ enum { MODE_WHEEL, MODE_MOUSE };
 static uint8_t last_mode = MODE_MOUSE;
 static uint16_t last_report = 0;
 volatile bool select_button_pressed = false; // toggled from keymap
+volatile bool precision_mode = false;          // toggled from keymap
 
 static int8_t distances[AXIS_NUM] = {0};
 static rate_meter_t rate_meters[AXIS_NUM] = {0};
@@ -125,7 +126,14 @@ static void trackball_move(uint8_t axis, int8_t direction) {
     const float ry = rate_meter_rate(&rate_meters[AXIS_Y]);
 
     const float rate = sqrtf(rx * rx + ry * ry);
-    const float ratio = (rate > 0) ? (rateToVelocityCurve(rate) / rate) : 0;
+    float velocity = rateToVelocityCurve(rate);
+
+    // Apply precision scaling if enabled
+    if (precision_mode) {
+        velocity *= 0.5f; // 50% speed for high precision
+    }
+
+    const float ratio = (rate > 0) ? (velocity / rate) : 0;
 
     const float vx = rx * ratio;
     const float vy = ry * ratio;

@@ -115,6 +115,7 @@ static bool is_locked = false;
 
 // Extern from trackball.c to control scroll mode
 extern volatile bool select_button_pressed;
+extern volatile bool precision_mode;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (is_locked && keycode != KB_LOCK && keycode != MO(LY1)) {
@@ -146,6 +147,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case JS_DOWN:
       joystick_set_axis(0, record->event.pressed ? 127 : 0);
       return false;
+    case MS_BTN3:
+      if (record->event.pressed && select_button_pressed) {
+          precision_mode = !precision_mode;
+          return false;
+      }
+      return true;
     default:
       return true;
   }
