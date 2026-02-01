@@ -127,7 +127,7 @@ If the trackball does not sit flush beneath the **uConsole** cover or exhibits s
 ![Shim Install Location](https://github.com/j1n6/qmk-uconsole/blob/main/images/3d-printed-tpu-shim.jpeg?raw=true)
 
 ## ☕ Support My Work
-If you like my work, please consider [Buy me a Coffee](https://www.paypal.com/donate?token=0VRjowcZ_vZADGjy8UpFzoxQ9fgRgK27nz7Aw80MCTsNo8EzsxBGzcvTxYOGbU9r9nCraSPyB9LN4_Nn). Thank you.
+If you like my work, please consider [Buy me a Coffee](https://buy.stripe.com/00wfZi01WbPn14taZLeZ200). Thank you.
  
  
 ## 📜 License
