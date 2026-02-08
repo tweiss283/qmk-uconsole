@@ -36,7 +36,7 @@ Perfect for verifying your firmware installation and familiarizing yourself with
 * **Precision Cursor Mode:** Hold the **Select** key and press the trackball **middle** button to toggle between
    - **Normal Mode** — regular cursor movement
    - **Precision Mode** — reduced cursor movement for fine control
-   This provides a quick two-state toggle for precise pointer adjustments.
+This provides a quick two-state toggle for precise pointer adjustments.
 
 ## 🎯 Installation Guide
 
