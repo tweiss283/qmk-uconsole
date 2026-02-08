@@ -129,6 +129,9 @@ If the trackball does not sit flush beneath the **uConsole** cover or exhibits s
 
 * **Material Recommendation:** I highly recommend printing this part using **TPU** or another flexible filament. The elasticity of TPU provides the necessary grip to hold the module in place while acting as a shock absorber for a quieter user experience.
 
+### Improving Keypress & Backlight
+A custom keyboard diffuser design is available to improve the keypress responsiveness & lighting, details can be [found here](https://jing.io/projects/uconsole-keyboard-diffuser/).
+
 ![Shim Install Location](https://github.com/j1n6/qmk-uconsole/blob/main/images/3d-printed-tpu-shim.jpeg?raw=true)
 
 ## ☕ Support My Work
