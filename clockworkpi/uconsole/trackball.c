@@ -19,10 +19,7 @@ enum { MODE_WHEEL, MODE_MOUSE };
 static uint8_t last_mode = MODE_MOUSE;
 static uint16_t last_report = 0;
 volatile bool select_button_pressed = false; // toggled from keymap
-/* When true, reduce cursor movement for high precision control. */
-volatile bool precision_mode = false;
-
-#define PRECISION_MULTIPLIER 0.25f
+volatile bool precision_mode = false;          // toggled from keymap
 
 static int8_t distances[AXIS_NUM] = {0};
 static rate_meter_t rate_meters[AXIS_NUM] = {0};
@@ -129,7 +126,14 @@ static void trackball_move(uint8_t axis, int8_t direction) {
     const float ry = rate_meter_rate(&rate_meters[AXIS_Y]);
 
     const float rate = sqrtf(rx * rx + ry * ry);
-    const float ratio = (rate > 0) ? (rateToVelocityCurve(rate) / rate) : 0;
+    float velocity = rateToVelocityCurve(rate);
+
+    // Apply precision scaling if enabled
+    if (precision_mode) {
+        velocity *= 0.5f; // 50% speed for high precision
+    }
+
+    const float ratio = (rate > 0) ? (velocity / rate) : 0;
 
     const float vx = rx * ratio;
     const float vy = ry * ratio;
@@ -199,10 +203,6 @@ report_mouse_t pointing_device_driver_get_report(report_mouse_t mouse_report) {
       y = glider_glide(&gliders[AXIS_Y], (uint8_t)delta);
       distances[AXIS_X] = 0;
       distances[AXIS_Y] = 0;
-      if (precision_mode) {
-        x = (int8_t)roundf((float)x * PRECISION_MULTIPLIER);
-        y = (int8_t)roundf((float)y * PRECISION_MULTIPLIER);
-      }
       break;
     case MODE_WHEEL:
       // Use glider for smoothed momentum scrolling
