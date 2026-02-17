@@ -41,8 +41,6 @@ Perfect for verifying your firmware installation and familiarizing yourself with
       - When disabled: keys behave normally (single key press/release)
       - When enabled: timing-based tap-hold behavior applies
     * **Factory Reset:** Press **Fn+C** to reset EEPROM to factory defaults
-      - Uses QMK's built-in `EE_CLR` keycode to clear all EEPROM data
-      - Disables tap-hold and resets all other EEPROM configurations
     * **Note:** Game keys (X, Y, A, B, Select, Start) and direction keys (Up, Down, Left, Right) do NOT have tap-hold behavior to preserve their functionality for gaming
 
 * **Trackball Scrolling:** Hold the **Select** key and move the trackball to scroll.
